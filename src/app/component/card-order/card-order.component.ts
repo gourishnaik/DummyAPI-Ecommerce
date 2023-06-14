@@ -14,5 +14,9 @@ ngOnInit(): void {
     this.router.navigate(["/"]);
     this.api.removeallitems();
   }, 4000);
+    //getting item from localstorage
+      let localdata = localStorage.getItem('ecomdata')
+      this.userdata = localdata;
+      this.username = JSON.parse(this.userdata)
 }
 }
