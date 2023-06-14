@@ -1,0 +1,72 @@
+<div class="container" *ngIf="carddetails">
+
+
+  <!-- Card -->
+  <div class="card">
+
+    <!-- Card image -->
+    <img class="card-img-top"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLLMgniOR-eu8WT0-llAtIzkPXDcIhcolDGA&usqp=CAU"
+      alt="Card image cap">
+
+    <!-- Card content -->
+    <div class="card-body">
+      <form [formGroup]="cardform">
+        <h4 class="text-center">Card details</h4>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Credit card number</label>
+          <input type="number" formControlName="cardname" class="form-control" id="exampleInputPassword1"
+            placeholder="1111-2222-3333-4444">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Exp Month</label>
+          <input type="text" formControlName="expirymonth" class="form-control" id="exampleInputPassword1"
+            placeholder="September">
+        </div>
+
+        <div class="row">
+
+          <div class="form-group col-50">
+            <label for="exampleInputPassword1">Exp Year</label>
+            <input type="number" formControlName="expiryyear" class="form-control" id="exampleInputPassword1"
+              placeholder="2023">
+          </div>
+          <div class="col-50">
+            <label for="exampleInputPassword1">CVV</label>
+            <input type="number" formControlName="cvv" class="form-control" id="exampleInputPassword1"
+              placeholder="352">
+          </div>
+        </div>
+      </form>
+
+      <!-- Button -->
+      <button (click)="pay()" [disabled]="this.cardform.invalid" class="btn btn-primary mt-3">CLICK TO PAY
+        ${{finalamount}}</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!------OTP FILED -->
+<div class="container " *ngIf="otpdetails">
+  <div class="card ">
+
+    <div class="card-body">
+
+      <div class="form-group">
+        <strong>Kindly Enter OTP</strong>
+        <form [formGroup]="otpform">
+          <input type="password" formControlName="otp" class="form-control mt-3" id="exampleInputPassword1"
+            placeholder="Enter OTP">
+        </form>
+        <div>
+          <button [disabled]="this.otpform.invalid"routerLink="/cardorder" class="btn btn-success mt-2">Submit</button>&nbsp;
+          <button (click)="cancel()" class="btn btn-secondary mt-2">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

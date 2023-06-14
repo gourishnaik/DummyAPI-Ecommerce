@@ -1,0 +1,17 @@
+.card{
+    width: 350px;
+    margin-top: 20px;
+    left: 380px;
+}
+input[type=text] {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
