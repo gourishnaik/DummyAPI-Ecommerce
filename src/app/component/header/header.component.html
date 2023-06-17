@@ -10,19 +10,19 @@
                 <i routerLink="cart-page" class="fas fa-shopping-cart"
                     style="color:white;font-size: 18px;cursor:pointer;">&nbsp;{{cartitems}}</i>
 
-                <ul class="dropdown-menu" *ngIf="this.showproduct.length >=1" style="background:black;">
+                <ul class="dropdown-menu" *ngIf="this.showproduct.length >=1" style="background:black;border: 1px solid white;">
                     <div style="width: 280px;" class="CartContainer">
                         <div class="row">
                             <div class="col-6">
                                 <strong class="text-light">Your Cart Items </strong>
                             </div>
-                            <div class="col-4 text-end text-primary">
+                            <div class="col-3 text-end text-primary">
                                 <strong  class="text-light">Price </strong>
                             </div>
                             <!-- ngFor looping-->
                             <div class="row mt-3" *ngFor="let item of showproduct">
                                 <div class="col-7">
-                                    <img style="width: 100px;margin-left: 5px;" src="{{item.thumbnail}}">
+                                    <img style="width: 70px;margin-left: 5px;" src="{{item.thumbnail}}">
                                 </div>
                                 <div class="col-3 ">
                                     <h4 class="text-light">${{item.price}}</h4>
